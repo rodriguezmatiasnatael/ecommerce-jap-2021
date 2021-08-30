@@ -139,3 +139,35 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/* #userName, #password {
+  display: block;
+  margin: auto;
+}
+form .login-label {
+  display: block;
+} */
+#login label, #login input, #login button {
+  display: block;
+  margin: 1em auto;
+  border-radius: 5px;
+}
+#login input {
+  background-color: lightgray;
+  width: 60%;
+  max-width: 400px;
+  border: grey 1px solid;
+}
+#login input:focus {
+  background-color: white;
+  outline-color: #0087F7;
+}
+#login button {
+  background-color: #0087F7;
+  border-color: #0087F7;
+  color: white;
+}
+#login button:active, #login button:focus {
+  outline-color: #31a1fd;
+  background-color: #0078da;
+}
