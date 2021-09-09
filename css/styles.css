@@ -140,13 +140,6 @@ a.custom-card:hover {
   color: orange;
 }
 
-/* #userName, #password {
-  display: block;
-  margin: auto;
-}
-form .login-label {
-  display: block;
-} */
 #login label, #login input, #login button {
   display: block;
   margin: 1em auto;
@@ -162,12 +155,32 @@ form .login-label {
   background-color: white;
   outline-color: #0087F7;
 }
-#login button {
+#login button, #search-and-filter > button {
   background-color: #0087F7;
   border-color: #0087F7;
   color: white;
+  border-radius: 5px;
 }
-#login button:active, #login button:focus {
+#login button:active, #login button:focus, #search-and-filter > button:active, #search-and-filter > button:focus{
   outline-color: #31a1fd;
   background-color: #0078da;
+}
+
+#search-and-filter > input {
+  background-color: lightgray;
+  border: grey 1px solid;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin-bottom: 2px;
+}
+
+#search-and-filter > input:focus{
+  background-color: white;
+  outline-color: #0087F7;
+  border: 0px;
+}
+
+#search-and-filter {
+  width: 5 rem;
+  margin-right: 10px;
 }

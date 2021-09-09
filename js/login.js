@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         let loginButton = document.getElementById('loginButton');
         loginButton.addEventListener('click', function(e){
             e.preventDefault();
-            let $userName = document.getElementById('userName').value;
-            let $password = document.getElementById('password').value;
+            var $userName = document.getElementById('userName').value;
+            var $password = document.getElementById('password').value;
             if($userName ==='' || $password ==='') {
                 alert('Ingrese usuario y contraseña');
             } else if ($password.length < 9 && $userName.length < 6) {
@@ -20,12 +20,14 @@ document.addEventListener("DOMContentLoaded", function(e){
                 alert('La contraseña debe contener por lo menos 9 caracteres');
             } else {
                 localStorage.setItem('logueado', 'true');
+                localStorage.setItem('usuario', $userName);
             }
             if (localStorage.getItem('logueado') == 'true') {location.replace('index.html');}
         });
     }
     
     login();
+
 });
 
 
