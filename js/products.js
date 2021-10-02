@@ -50,7 +50,7 @@ function showProductsList(){
       if (((minPrice === undefined || minPrice === '') || (minPrice != undefined && parseInt(product.cost) >= minPrice)) &&
         ((maxPrice === undefined || maxPrice === '') || (maxPrice != undefined && parseInt(product.cost) <= maxPrice)) && (product.name.toLocaleLowerCase().includes(sentenceSearched))){
         htmlContentToAppend += `
-        <a href="category-info.html" class="list-group-item list-group-item-action">
+        <a href="product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -71,14 +71,8 @@ function showProductsList(){
 }
 
 
+
 document.addEventListener("DOMContentLoaded", function (e) {
-  function addUser(){
-    let $nombreUs = document.getElementById('nombre-us');
-    let nombre = document.createTextNode(localStorage.getItem('usuario'));
-    $nombreUs.appendChild(nombre);
-  }
-  
-  addUser();
   getJSONData(PRODUCTS_URL)
   .then((resultObj)=>{
     if (resultObj.status === "ok"){
@@ -92,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let $labelsortDescPrice = document.getElementById('sortDescPrice');
   let $filterButton = document.getElementById('rangeFilterPrice');
   let $searchButton = document.getElementById('search-button');
-
+  let $searchField = document.getElementById('search-field');
   
   $labelsortAscPrice.addEventListener('click', function(){
     currentSortCriteria = ORDER_ASC_BY_PRICE;
@@ -121,6 +115,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     minPrice = $inputMin;
     maxPrice = $inputMax;
     console.log(minPrice);
+    delateDivListContainer();
+    createDivListContainer();
+    showProductsList();
+  })
+  $searchField.addEventListener('keyup', function(){
+    let $searchFieldValue = document.getElementById('search-field').value.toLocaleLowerCase();
+    sentenceSearched = $searchFieldValue;
     delateDivListContainer();
     createDivListContainer();
     showProductsList();
