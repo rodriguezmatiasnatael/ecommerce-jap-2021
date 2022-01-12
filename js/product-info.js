@@ -178,8 +178,12 @@ document.addEventListener("DOMContentLoaded", function(e){
                 let htmlContentToAppend = "";
                 for (i = 0; i < product.relatedProducts.length; i++){
                     htmlContentToAppend += `
-                    <li>${products[product.relatedProducts[i]].name}</li>
-                    <img src="${products[product.relatedProducts[i]].imgSrc}"></img>`
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="d-block mb-4 h-100">
+                            <p><strong>${products[product.relatedProducts[i]].name}</strong> - ${products[product.relatedProducts[i]].currency}${products[product.relatedProducts[i]].cost}</p>
+                            <img class="img-fluid img-thumbnail" src="${products[product.relatedProducts[i]].imgSrc}" alt="">
+                        </div>
+                    </div>`
                     $relatedProducts.innerHTML = htmlContentToAppend;
                 }
             })

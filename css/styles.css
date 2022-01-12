@@ -210,11 +210,31 @@ a.custom-card:hover {
 .puntuacion input:checked ~ label {
   color:orange;
 }
+
 span#valor{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 400;
   color: blue;
 }
+
 div.puntuacion-comentario {
   display: inline-block;
+}
+
+#related-procucts {
+  list-style: none;
+}
+
+.ul-list {
+  display: none;
+}
+
+#userName:hover .ul-list{
+  display: block;
+}
+
+
+.ul-list {
+  padding-left: 0px;
+  list-style: none;
 }
