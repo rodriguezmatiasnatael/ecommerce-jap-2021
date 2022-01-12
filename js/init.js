@@ -76,11 +76,12 @@ function signOut(){
 document.addEventListener("DOMContentLoaded", function(e){
     if (!window.location.href.endsWith('login.html')) {
       addUser();
-      if (localStorage.getItem('logueado') === 'false' || localStorage.getItem('logueado') === null) {location.replace('login.html');}
-    }
-    let $signOut = document.getElementById('signOut');
-    $signOut.addEventListener('click', function(e){
+      let $signOut = document.getElementById('signOut');
+      $signOut.addEventListener('click', function(e){
       e.preventDefault();
       signOut();
-    });
+      });
+      if (localStorage.getItem('logueado') === 'false' || localStorage.getItem('logueado') === null) {location.replace('login.html');}
+    }
+    
 });

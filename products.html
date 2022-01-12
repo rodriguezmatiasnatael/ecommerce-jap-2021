@@ -31,23 +31,27 @@
         </div>
       <div class="container">
         <div class="row">
-            <div class="col text-right">
-                <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                    <label for="search-field" id="search-and-filter" class="my-auto">
-                      <input class="py-1" type="search" name="search-field" id="search-field">
-                      <button class="mr-5 ml-1 btn btn-light my-auto" type="submit" id="search-button"><img src="img/lupa.svg" width="15px" height="15px"></button>
-                    </label>
-                    <label for="orden" class="btn btn-light my-auto" id="sortDescRel">Relevancia
-                        <input type="radio" name="orden" autocomplete="off">
-                    </label>
-                    <p class="mx-3 my-auto">Precio</p>
-                    <label class="btn btn-light active my-auto" id="sortAscPrice">
-                        <input type="radio" name="orden" autocomplete="off" checked>&lt;a&gt;
-                    </label>
-                    <label class="btn btn-light my-auto" id="sortDescPrice" >&gt;a&lt;
-                        <input type="radio" name="orden" autocomplete="off"> 
-                    </label>
+            <div class="col searchandorder-container">
+              <label for="search-field" id="search-and-filter">
+                <input class="py-1" type="search" name="search-field" id="search-field">
+                <button class="btn btn-light my-auto" type="submit" id="search-button"><img src="img/lupa.svg" width="20px"></button>
+              </label>
+              <label class="btn-group btn-group-toggle" data-toggle="buttons">
+                <div>
+                  <label for="orden" class="btn btn-light my-auto" id="sortDescRel">Relevancia
+                    <input type="radio" name="orden" autocomplete="off">
+                  </label>
+                </div>  
+                <div>
+                  <p class="my-auto">Precio</p>
+                  <label class="btn btn-light active my-auto" id="sortAscPrice">&lt;a&gt;
+                    <input type="radio" name="orden" autocomplete="off" checked>
+                  </label>
+                  <label class="btn btn-light my-auto" id="sortDescPrice" >&gt;a&lt;
+                    <input type="radio" name="orden" autocomplete="off"> 
+                  </label>
                 </div>
+              </label>
             </div>
         </div>
         <div class="row justify-content-end">
@@ -73,7 +77,7 @@
             </div>
         </div>
         <div class="row" id="list-container-parent">
-          <div class="list-group" id="products-list-container"> 
+          <div class="list-group" id="products-list-container">
           </div>
         </div>
       </div>

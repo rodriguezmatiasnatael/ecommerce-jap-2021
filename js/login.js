@@ -21,6 +21,15 @@ document.addEventListener("DOMContentLoaded", function(e){
             } else {
                 localStorage.setItem('logueado', 'true');
                 localStorage.setItem('usuario', $userName);
+                let infousuario = {
+                    usuario: $userName,
+                    nombre: null,
+                    apellido: null,
+                    edad: null,
+                    email: null,
+                    telefono: null
+                }
+                localStorage.setItem('infousuario', JSON.stringify(infousuario));
             }
             if (localStorage.getItem('logueado') == 'true') {location.replace('index.html');}
         });
